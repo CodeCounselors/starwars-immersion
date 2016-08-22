@@ -35,7 +35,6 @@ export class CharacterPage extends React.Component { // eslint-disable-line reac
 	}
 
 	render() {
-
 		let options = []
 		if (this.props.allCharacters) {
 			options = this.props.allCharacters.map(c => {

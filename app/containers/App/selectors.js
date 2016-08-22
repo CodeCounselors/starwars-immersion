@@ -18,7 +18,7 @@ const selectLocationState = () => {
 const selectCurrentCharacter = () => createSelector(
 	selectGlobal(),
 	(globalState) => globalState.get('currentCharacter')
-);
+)
 
 export {
 	selectLocationState,

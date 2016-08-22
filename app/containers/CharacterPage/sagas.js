@@ -9,7 +9,7 @@ import { loadCharacters, charactersLoaded } from './actions'
  * SWAPI character (people) request/response handler
  */
 export function* getCharacters() {
-	const requestURL = `http://swapi.co/api/people/`
+	const requestURL = 'http://swapi.co/api/people/'
 	const characters = yield call(request, requestURL)
 
 	if (!characters.err) {

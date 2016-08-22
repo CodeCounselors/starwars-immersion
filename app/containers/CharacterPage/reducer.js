@@ -18,7 +18,7 @@ const initialState = fromJS({
 })
 
 function setSelectedCharacter(state, characterKey) {
-	//TODO: Should a selector be used here? How to make that work?
+	// TODO: Should a selector be used here? How to make that work?
 	const characters = state.getIn(['characterData', 'characters'])
 	const selectedCharacter = characters.find(c => c.url === characterKey)
 	return state.set('selectedCharacter', characterKey).setIn(['characterData', 'current'], selectedCharacter)
