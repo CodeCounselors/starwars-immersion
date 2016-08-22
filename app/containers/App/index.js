@@ -14,6 +14,7 @@
 import React from 'react'
 
 import styles from './styles.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 export default class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
 

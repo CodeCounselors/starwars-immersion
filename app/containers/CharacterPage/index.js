@@ -25,7 +25,8 @@ import { selectCharacterResource, selectCurrentCharacter, selectAllCharacters } 
 export class CharacterPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
 	/**
-	 * when initial state username is not null, submit the form to load repos
+	 * when initial state username is not null, submit the form to load
+	 * characterData
 	 */
 	componentDidMount() {
 		if (!this.props.allCharacters) {

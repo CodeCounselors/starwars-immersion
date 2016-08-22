@@ -5,6 +5,7 @@
  */
 
 import React from 'react'
+import { Jumbotron, Grid, Row, Col } from 'react-bootstrap'
 
 import { FormattedMessage } from 'react-intl'
 import messages from './messages'
@@ -14,16 +15,16 @@ import styles from './styles.css'
 function CharacterBio(props) {
 	const bio = props.bioData
 	return (
-		<div className={styles.characterBio}>
-			<h1>
-				<FormattedMessage {...messages.header} />
-			</h1>
+		<Grid className={styles.characterBio}>
+			<Jumbotron>
+				<h2><FormattedMessage {...messages.header} /></h2>
+			</Jumbotron>
 			<h2 className={styles.characterTitle}>{bio.name}</h2>
-			<div className="row">
-				<div><FormattedMessage {...messages.birthYear} />:</div>
-				<div>{bio.birth_year}</div>
-			</div>
-		</div>
+			<Row>
+				<Col md={2}><FormattedMessage {...messages.birthYear} />:</Col>
+				<Col md="2">{bio.birth_year}</Col>
+			</Row>
+		</Grid>
 	)
 }
 

@@ -18,8 +18,7 @@ class CharacterSelector extends React.Component { // eslint-disable-line react/p
 		return (
 			<div className={styles.characterSelector}>
 				<label>Select a Character:</label>
-				<Select options={this.props.options} onChange={this.props.onChangeCharacter}/>
-				<div>{this.props.selectedResource}</div>
+				<Select options={this.props.options} onChange={this.props.onChangeCharacter} value={this.props.selectedResource} />
 			</div>
 		)
 	}

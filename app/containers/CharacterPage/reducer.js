@@ -21,15 +21,14 @@ function setSelectedCharacter(state, characterKey) {
 	//TODO: Should a selector be used here? How to make that work?
 	const characters = state.getIn(['characterData', 'characters'])
 	const selectedCharacter = characters.find(c => c.url === characterKey)
-	state.setIn(['characterData', 'current'], selectedCharacter)
+	return state.set('selectedCharacter', characterKey).setIn(['characterData', 'current'], selectedCharacter)
 }
 
 function characterReducer(state = initialState, action) {
 	switch (action.type) {
 
 		case CHARACTER_CHANGE:
-			setSelectedCharacter(state, action.name)
-			return state.set('selectedCharacter', action.name)
+			return setSelectedCharacter(state, action.name)
 
 		case CHARACTER_LOAD_SUCCESS:
 			return state
