@@ -8,7 +8,20 @@ const selectCharacterPageDomain = () => state => state.get('characterPage')
 /**
  * Other specific selectors
  */
+const selectCharacterResource = () => createSelector(
+	selectCharacterPageDomain(),
+	(localState) => localState.get('selectedCharacter')
+)
 
+const selectAllCharacters = () => createSelector(
+	selectCharacterPageDomain(),
+	(localState) => localState.getIn(['characterData', 'characters'])
+)
+
+const selectCurrentCharacter = () => createSelector(
+	selectCharacterPageDomain(),
+	(localState) => localState.getIn(['characterData', 'current'])
+)
 
 /**
  * Default selector used by CharacterPage
@@ -19,7 +32,9 @@ const selectCharacterPage = () => createSelector(
 	(substate) => substate.toJS()
 )
 
-export default selectCharacterPage
 export {
-	selectCharacterPageDomain,
+	selectCharacterPage,
+	selectCharacterResource,
+	selectAllCharacters,
+	selectCurrentCharacter,
 }
